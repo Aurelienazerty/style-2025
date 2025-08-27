@@ -1,0 +1,21 @@
+/* === BARRE DE PERFORMANCE FLUENT === */
+.barreSondage {
+	background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  border-radius: 9px;
+	transition: width var(--transition-medium);
+}
+.barreSondagePointe {
+	border: none;
+}
+.sondageMax {
+	background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+}
+tr.moyennebench td, tr.moyennebench td:hover {
+	background-color: var(--color-info) !important;
+	height: 1px;
+	padding: 1px;
+}
+
+.padding0 div.moyenne {
+	margin-top: 0 !important;
+}

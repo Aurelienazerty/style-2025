@@ -1,0 +1,516 @@
+/* === BREADCRUMB UNIFIÉ AVEC EFFETS FLUENT === */
+
+.breadcrumb {
+  display: block;
+  width: 100%;
+  max-width: min(100%, var(--max-width-blocs));
+  margin: var(--space-s) auto var(--space-m) auto;
+  padding: var(--space-s) var(--space-m);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 0.95rem;
+  overflow: visible;
+  white-space: normal;
+  position: relative;
+  font-family: 'Segoe UI', 'Poppins', Arial, Helvetica, sans-serif;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+.breadcrumb ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: visible;
+  white-space: normal;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  position: relative;
+}
+
+/* Liens principaux et items interactifs avec effets uniformisés */
+.breadcrumb a,
+.breadcrumb li.has-submenu > div,
+.breadcrumb li.has-submenu > span {
+  color: var(--color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all var(--transition-fast);
+  font-weight: 600;
+  border-radius: var(--radius);
+  padding: var(--space-xs) var(--space-s);
+  letter-spacing: 0.03em;
+  font-family: inherit;
+  white-space: nowrap;
+  gap: var(--space-xs);
+  font-size: 0.95rem;
+  background: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  min-height: 36px;
+  height: 36px;
+}
+
+/* Effets de survol harmonisés avec le menu principal */
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible,
+.breadcrumb li.has-submenu > div:hover,
+.breadcrumb li.has-submenu > div:focus-visible,
+.breadcrumb li.has-submenu > span:hover,
+.breadcrumb li.has-submenu > span:focus-visible {
+  color: var(--color-primary-hover);
+  background: var(--color-hover);
+  text-decoration: none;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.breadcrumb a:active,
+.breadcrumb li.has-submenu > div:active,
+.breadcrumb li.has-submenu > span:active {
+  transform: translateY(0);
+}
+/* Icônes avec effets de translation harmonisés */
+.breadcrumb a i,
+.breadcrumb li.has-submenu > div i,
+.breadcrumb li.has-submenu > span i,
+.breadcrumb .hasLink i {
+  color: var(--color-primary);
+  font-size: 0.9em;
+  margin-right: 3px;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), opacity var(--transition-fast), color var(--transition-fast);
+  opacity: 0.8;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.breadcrumb a:hover i,
+.breadcrumb a:focus-visible i,
+.breadcrumb li.has-submenu > div:hover i,
+.breadcrumb li.has-submenu > div:focus-visible i,
+.breadcrumb li.has-submenu > span:hover i,
+.breadcrumb li.has-submenu > span:focus-visible i {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+/* Icône maison avec style unifié */
+.breadcrumb .home .hasLink {
+  background: transparent !important;
+  color: var(--color-primary) !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  box-shadow: none !important;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  padding: 8px !important;
+  min-width: 36px;
+}
+
+/* Items de contenu non interactifs */
+.breadcrumb .hasLink,
+.breadcrumb .content1,
+.breadcrumb .content2,
+.breadcrumb .content3,
+.breadcrumb .content4,
+.breadcrumb .content5,
+.breadcrumb .content6 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-xs);
+  background: transparent;
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 0 var(--space-s);
+  min-width: 0;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  height: 36px;
+  font-size: 0.95rem;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* Séparateur avec style affiné */
+.breadcrumb > ul > li:not(:last-child)::after {
+  content: "›";
+  color: var(--color-border);
+  margin: 0 var(--space-xs);
+  font-size: 1.1em;
+  font-weight: 700;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.breadcrumb > ul > li:not(:last-child):hover::after {
+  opacity: 0.8;
+  transform: translateX(1px);
+}
+
+/* Focus visible unifié */
+.breadcrumb a:focus-visible,
+.breadcrumb li.has-submenu > div:focus-visible,
+.breadcrumb li.has-submenu > span:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  background: var(--color-hover);
+}
+
+/* === AMÉLIORATION DES SOUS-MENUS === */
+
+/* Zone de détection élargie pour les sous-menus */
+.breadcrumb li.has-submenu {
+  position: relative;
+}
+
+/* Créer une zone tampon pour faciliter l'accès aux sous-menus */
+.breadcrumb li.has-submenu::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Zone invisible pour faciliter l'accès au sous-menu */
+  z-index: 999;
+}
+
+/* Sous-menus avec effets Fluent harmonisés */
+.breadcrumb li ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  min-width: 220px;
+  z-index: 1000;
+  padding: var(--space-xs) 0;
+  margin: 5px 0 0 0;
+  flex-direction: column;
+  gap: 0;
+  white-space: normal;
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.98);
+  transform-origin: top;
+  /* Délai plus long avant la disparition */
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.3s;
+  font-size: 0.95rem;
+  line-height: normal;
+}
+
+/* Affichage des sous-menus avec délai de disparition */
+.breadcrumb li.has-submenu:hover > ul,
+.breadcrumb li.has-submenu:focus-within > ul {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  /* Pas de délai pour l'apparition */
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0s;
+}
+
+/* Maintenir le sous-menu visible pendant la navigation vers celui-ci */
+.breadcrumb li.has-submenu > ul {
+  pointer-events: none;
+}
+
+.breadcrumb li.has-submenu:hover > ul,
+.breadcrumb li.has-submenu:focus-within > ul {
+  pointer-events: auto;
+}
+/* Sous-sous-menus (niveau 3) avec zone de détection améliorée */
+.breadcrumb li ul li.has-submenu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 20px;
+  height: 100%;
+  z-index: 999;
+}
+
+.breadcrumb li ul ul {
+  left: 100%;
+  top: 0;
+  margin: 0 0 0 5px;
+  transform: translateX(8px) scale(0.98);
+  transform-origin: left;
+}
+
+.breadcrumb li ul li:hover > ul,
+.breadcrumb li ul li:focus-within > ul {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) scale(1);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0s;
+}
+
+/* Animation d'entrée pour les sous-menus */
+@keyframes fadeInBreadcrumb {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.breadcrumb li:hover > ul {
+  animation: fadeInBreadcrumb 0.25s ease-out;
+}
+
+/* Items des sous-menus */
+.breadcrumb li ul li,
+.breadcrumb li ul ul li {
+  display: block;
+  width: 100%;
+  min-width: 180px;
+  margin: 0;
+  align-items: stretch;
+  border-bottom: 1px solid var(--color-border);
+  background: transparent !important;
+  position: relative;
+}
+
+.breadcrumb li ul li:last-child,
+.breadcrumb li ul ul li:last-child {
+  border-bottom: none;
+}
+
+/* Liens des sous-menus avec effets harmonisés */
+.breadcrumb li ul li > a,
+.breadcrumb li ul li > div,
+.breadcrumb li ul li > span {
+  width: 100%;
+  border-radius: calc(var(--radius) / 2);
+  margin: 0 var(--space-xs);
+  padding: var(--space-s) var(--space-m);
+  color: var(--color-text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast), padding var(--transition-fast);
+  white-space: nowrap;
+  background: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 36px;
+  height: 36px;
+  justify-content: flex-start;
+}
+
+/* Ellipsis sur les spans */
+.breadcrumb span[class*="content"] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: contents;
+  max-width: 160px;
+}
+
+/* Largeurs pour niveaux profonds */
+.breadcrumb span.content3 { max-width: 220px; }
+.breadcrumb span.content4 { max-width: 180px; }
+.breadcrumb span.content5 { max-width: 140px; }
+.breadcrumb span.content6 { max-width: 110px; }
+
+/* Masquer les images parasites */
+.breadcrumb img {
+  display: none;
+}
+
+.breadcrumb li,
+.breadcrumb li li {
+  float: none !important;
+}
+
+/* === DESKTOP OPTIMISATIONS === */
+@media (min-width: 1200px) {
+  .breadcrumb {
+    padding: var(--space-s) var(--space-l);
+    margin: var(--space-m) auto;
+  }
+  
+  .breadcrumb ul {
+    gap: var(--space-s);
+  }
+  
+  .breadcrumb .hasLink,
+  .breadcrumb .content1,
+  .breadcrumb .content2,
+  .breadcrumb .content3,
+  .breadcrumb .content4,
+  .breadcrumb .content5,
+  .breadcrumb .content6 {
+    max-width: 300px; /* Plus d'espace pour le texte sur grands écrans */
+  }
+  
+  .breadcrumb > ul > li:not(:last-child)::after {
+    margin: 0 var(--space-s);
+  }
+  
+  .breadcrumb li ul {
+    min-width: 250px;
+    padding: var(--space-s) 0;
+  }
+  
+  .breadcrumb li ul li > a,
+  .breadcrumb li ul li > div,
+  .breadcrumb li ul li > span {
+    padding: var(--space-s) var(--space-l);
+    min-height: 40px;
+    height: 40px;
+  }
+  
+  .breadcrumb li ul li > a:hover,
+  .breadcrumb li ul li > a:focus,
+  .breadcrumb li ul li > div:hover,
+  .breadcrumb li ul li > div:focus,
+  .breadcrumb li ul li > span:hover,
+  .breadcrumb li ul li > span:focus {
+    padding-left: calc(var(--space-l) + var(--space-xs));
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 0.9rem;
+    padding: var(--space-xs) var(--space-s);
+    margin: var(--space-xs) auto var(--space-s) auto;
+  }
+  
+  .breadcrumb .hasLink,
+  .breadcrumb .content1,
+  .breadcrumb .content2,
+  .breadcrumb .content3,
+  .breadcrumb .content4,
+  .breadcrumb .content5,
+  .breadcrumb .content6 {
+    max-width: 110px;
+    padding: 0 var(--space-xs);
+    font-size: 0.9rem;
+    height: 32px;
+  }
+  
+  .breadcrumb a,
+  .breadcrumb li.has-submenu > div,
+  .breadcrumb li.has-submenu > span {
+    padding: var(--space-xs);
+    font-size: 0.9rem;
+    height: 32px;
+    min-height: 32px;
+  }
+  
+  .breadcrumb a:hover,
+  .breadcrumb li.has-submenu > div:hover,
+  .breadcrumb li.has-submenu > span:hover {
+    transform: none; /* Désactiver l'effet de translation sur mobile */
+  }
+  
+  .breadcrumb li ul li > a,
+  .breadcrumb li ul li > div,
+  .breadcrumb li ul li > span {
+    height: 32px;
+    min-height: 32px;
+    padding: var(--space-xs) var(--space-s);
+  }
+  
+  /* Ajuster les sous-menus pour les petits écrans */
+  .breadcrumb li ul {
+    min-width: 180px;
+  }
+  
+  /* Réduire l'espace entre les éléments */
+  .breadcrumb > ul > li:not(:last-child)::after {
+    margin: 0 2px;
+    opacity: 0.5;
+    font-size: 1em;
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb {
+    font-size: 0.85rem;
+    padding: var(--space-xs) var(--space-xs);
+  }
+  
+  .breadcrumb ul {
+    gap: 2px;
+  }
+  
+  .breadcrumb > ul > li:not(:last-child)::after {
+    font-size: 0.9em;
+    margin: 0 2px;
+    opacity: 0.4;
+    height: 30px;
+    line-height: 30px;
+  }
+  
+  .breadcrumb .hasLink,
+  .breadcrumb .content1,
+  .breadcrumb .content2,
+  .breadcrumb .content3,
+  .breadcrumb .content4,
+  .breadcrumb .content5,
+  .breadcrumb .content6 {
+    max-width: 90px;
+  }
+  
+  /* Réduire encore la taille des éléments */
+  .breadcrumb a,
+  .breadcrumb li.has-submenu > div,
+  .breadcrumb li.has-submenu > span,
+  .breadcrumb li ul li > a,
+  .breadcrumb li ul li > div,
+  .breadcrumb li ul li > span {
+    height: 30px;
+    min-height: 30px;
+    padding: var(--space-xs) var(--space-xs);
+  }
+  
+  /* Masquer certains éléments sur très petits écrans */
+  .breadcrumb > ul > li:nth-last-child(n+6):not(:first-child) {
+    display: none;
+  }
+  
+  /* Ajouter un indicateur d'ellipsis pour montrer qu'il y a des éléments masqués */
+  .breadcrumb > ul > li:nth-last-child(5):not(:first-child)::before {
+    content: "...";
+    display: inline-block;
+    margin-right: 5px;
+    opacity: 0.7;
+  }
+}

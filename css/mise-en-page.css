@@ -1,0 +1,201 @@
+/* === UTILITAIRES DE TEXTE === */
+.nowrap { white-space: nowrap; }
+.jutifie { text-align: justify !important; }
+.clearBoth { clear: both; }
+.small { font-size: 0.8em !important; }
+.centre {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.milieu { vertical-align: middle !important; }
+
+/* === ALIGNEMENT ET FLOTTEMENT === */
+.gauche, .floatLeft { float: left; }
+.droite, .floatRight { float: right; } /* Correction de floatRigth en floatRight */
+
+td.gauche {
+  text-align: left !important;
+  float: none;
+}
+
+td.droite {
+  text-align: right !important;
+  float: none;
+}
+
+.invisible { display: none; }
+
+p, div, span {
+	text-align: justify;
+}
+
+/* === COULEURS === */
+.vert, .vert::before, .vert::after, option.public {
+  color: var(--color-success) !important;
+}
+
+.rouge, .rouge::before, .rouge::after, option.prive {
+  color: var(--color-error) !important;
+}
+
+.bleu, .bleu::before, .bleu::after {
+  color: var(--color-info) !important;
+}
+
+.gris {
+  color: var(--color-text-muted);
+}
+
+.fondVert {
+  background-color: var(--color-success);
+  color: white !important;
+}
+
+.fondRouge {
+  background-color: var(--color-error);
+  color: white !important;
+}
+
+/* === EFFET LETTRINE === */
+.lettrine::first-letter {
+  color: var(--color-primary);
+  font-size: 200% !important;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes roll {
+  100% { transform: rotate(360deg); }
+}
+
+.animate-fade-in { animation: fadeIn 0.3s ease-out; }
+.animate-slide-left { animation: slideInLeft 0.4s ease-out; }
+.animate-slide-right { animation: slideInRight 0.4s ease-out; }
+.roll {
+  animation-name: roll;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+/* === STRUCTURES DE MISE EN PAGE === */
+.row {
+  display: table;
+}
+
+.cell {
+  display: table-cell;
+}
+
+div.tableau {
+  display: flex;
+  width: 100%;
+}
+
+.tableau .colonne {
+  flex: 1;
+}
+
+/* === STYLES POUR RÉACTIONS ET COMMENTAIRES === */
+.nb-reaction {
+  color: var(--color-text-muted);
+}
+
+.galeriePhoto span.com, 
+.galeriePhoto span.like, 
+.galeriePhoto span.unlike, 
+.galeriePhoto span.reaction, 
+.dropdown-emoji span.reaction {
+  background: none;
+}
+
+.galeriePhoto span.com, 
+.galeriePhoto span.like, 
+.galeriePhoto span.unlike, 
+.galeriePhoto span.reaction {
+  padding: 1px !important;
+}
+
+.galeriePhoto span.conteneurComLike {
+  margin-left: 7px;
+  margin-top: 7px;
+  padding-top: 0px;
+  padding-bottom: 3px;
+}
+
+/* === STYLES POUR ÉCHELLES DE NOTATION === */
+ul.notes-echelle li label,
+ul.notes-echelle-res li label {
+  background: none;
+  padding-top: 0;
+}
+
+/* === STYLES POUR RECHERCHE === */
+ul.recherche li:before {
+  content: '' !important;
+}
+
+/* === CERCLES DE NOTATION === */
+.cercle-note-0::before,
+.cercle-note-1::before,
+.cercle-note-2::before,
+.cercle-note-3::before {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.cercle-note-4::before,
+.cercle-note-5::before,
+.cercle-note-6::before {
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
+.cercle-note-7::before,
+.cercle-note-8::before,
+.cercle-note-9::before,
+.cercle-note-10::before {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+/* === TRANSITIONS === */
+body, a, button, input, select, textarea, .button {
+  transition: background-color var(--transition-fast), 
+              color var(--transition-fast), 
+              border-color var(--transition-fast), 
+              box-shadow var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+/* === STYLES POUR DARK MODE === */
+@media (prefers-color-scheme: dark) {
+  code {
+    color: #7ECFA5;
+  }
+  
+  pre, div.code {
+    color: #7ECFA5;
+  }
+  
+  blockquote {
+    background-color: var(--color-info-light);
+  }
+}

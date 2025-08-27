@@ -1,0 +1,127 @@
+div.onglets {
+	margin-top: 25px;
+	margin-bottom: 20px;
+	text-align: center;
+	line-height: 2.2em;
+}
+
+/* VERSION MOBILE : Apparence boutons arrondis */
+span.fiche_onglet,
+span.fiche_onglet_courant {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: var(--space-s);
+	padding: var(--space-xs) var(--space-m);
+	border-radius: var(--radius);
+	border: 1px solid var(--color-border);
+	background-color: var(--color-surface);
+	font-weight: 500;
+	transition: all var(--transition-fast);
+	vertical-align: middle;
+	height: 40px;
+
+	gap: var(--space-s);
+	text-align: center;
+}
+
+span.fiche_onglet span,
+span.fiche_onglet_courant span {
+	display: inline-block;
+	font-size: 1.1em;
+}
+
+span.fiche_onglet {
+	color: var(--color-text-secondary);
+	border-color: var(--color-border);
+}
+
+span.fiche_onglet_courant {
+	background-color: var(--color-primary);
+	color: white;
+	border-color: var(--color-primary);
+}
+
+span.fiche_onglet:hover {
+	background-color: var(--color-hover);
+	border-color: var(--color-primary);
+	transform: translateY(-1px);
+}
+
+span.fiche_onglet a,
+span.fiche_onglet_courant a {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none !important;
+	transition: color var(--transition-fast);
+}
+
+span.fiche_onglet_courant a {
+	color: white !important;
+}
+
+span.fiche_onglet a:hover,
+span.fiche_onglet_courant a:hover {
+	text-decoration: none !important;
+}
+
+/** VERSION DESKTOP : Onglets classiques (≥1024px) */
+@media only screen and (min-width:1024px) {
+	div.onglets {
+		border-bottom: 1px solid var(--color-border);
+		line-height: initial;
+		padding-bottom: 1px;
+	}
+	
+	span.fiche_onglet,
+	span.fiche_onglet_courant {
+		display: inline-block;
+		margin: 0;
+		padding: 2px 4px 0 4px;
+		border: none;
+		border-radius: 0;
+		height: auto;
+		background: none;
+		transform: none;
+	}
+	
+	span.fiche_onglet,
+	span.fiche_onglet_courant,
+	span.fiche_onglet:hover,
+	span.fiche_onglet_courant:hover {
+		background: none;
+		border-color: transparent;
+		transform: none;
+	}
+	
+	span.fiche_onglet a:hover,
+	span.fiche_onglet_courant a:hover {
+		text-decoration: none !important;
+	}
+	
+	span.fiche_onglet {
+		color: var(--color-text-secondary);
+	}
+	
+	span.fiche_onglet:hover {
+		color: var(--color-accent-hover);
+	}
+	
+	span.fiche_onglet_courant {
+		color: var(--color-accent);
+		border-bottom: 2px solid var(--color-accent);
+		background: none;
+	}
+	
+	span.fiche_onglet a {
+		color: var(--color-text-secondary);
+	}
+	
+	span.fiche_onglet:hover a {
+		color: var(--color-accent-hover);
+	}
+	
+	span.fiche_onglet_courant a {
+		color: var(--color-accent) !important;
+	}
+}

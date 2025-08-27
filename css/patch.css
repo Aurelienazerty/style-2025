@@ -1,0 +1,87 @@
+#blockIndex {
+	margin-top: inherit;
+}
+div.news .actualite_content {
+	border:none;
+	padding:0;
+}
+div.news {
+	width: inherit;
+	margin-bottom: inherit;
+}
+
+td.archive {
+	background: var(--color-surface);
+  padding: var(--space-m);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-small);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-medium);
+  animation: fadeIn 0.3s ease-out;
+  position: relative;
+}
+
+/* === PATCH FONT AWESOME POUR FLUENT COLOR SCHEME === */
+
+/* Couleurs de base pour les icônes */
+.menu_gauche_content span[class*="fa-"], .menu_gauche_content i[class*="fa-"] {
+  color: var(--color-text-secondary);
+}
+
+/* Notes et moyennes */
+[class*="moyenne"] {
+  color: var(--color-accent);
+}
+
+/* Puces */
+li i.fa-chevron-right {
+  color: var(--color-primary);
+}
+
+i.puce {
+  color: var(--color-border);
+}
+
+i.puceNonLu {
+  color: var(--color-accent);
+}
+
+/* Icônes de métadonnées */
+.awi-metadata-icons i[class*="fa-"], 
+.awi-metadata-icons span[class*="fa-"], 
+.pronostique i[class*="fa-"] {
+  color: var(--color-text-secondary);
+}
+
+/* Alertes et informations */
+.warning i[class*="fa-"] {
+  color: var(--color-accent);
+}
+
+.information i[class*="fa-"] {
+  color: var(--color-primary);
+}
+
+/* Icône de verrouillage */
+.fa-lock {
+  color: var(--color-accent) !important;
+}
+
+/* Notes et étoiles */
+ul[class*="notes-echelle"] i.fa-solid.fa-star {
+  color: var(--color-accent);
+}
+
+ul[class*="notes-echelle"] i.fa-regular.fa-star {
+  color: var(--color-text-secondary);
+}
+
+/* Galeries */
+.cr_galerie i, .pic_galerie i {
+  color: var(--color-text-secondary);
+}
+
+/* Admin */
+.grillepassee i.fa-pencil {
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,113 @@
+/* Bouton loupe (toggle d'ouverture) */
+.search-toggle {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  color: var(--color-primary);
+  position: relative;
+  z-index: 2;
+}
+
+.search-zone {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-toggle.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* Barre de recherche animée */
+.search-bar {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: width 0.3s var(--transition-fast), opacity 0.2s;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0;
+}
+
+/* Barre de recherche visible */
+.header-right.search-active .search-bar {
+  width: 270px;
+  opacity: 1;
+  padding: 0 8px 0 0;
+}
+
+.awi-search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.awi-search input {
+  flex: 1;
+  min-width: 0;
+  margin-right: 4px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--color-text);
+  height: 38px;
+}
+
+/* === BOUTONS RONDS === */
+.search-submit,
+.search-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%; /* Rond parfait */
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: none;
+  padding: 0 !important;
+}
+
+.search-submit:hover,
+.search-close:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.search-submit:active,
+.search-close:active {
+  background: var(--color-primary-hover);
+}
+
+.search-submit:disabled,
+.search-close:disabled {
+  background: var(--color-bg-muted);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}

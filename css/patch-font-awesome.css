@@ -1,0 +1,183 @@
+.awi-hmenu i {
+	padding-right: var(--space-xs);
+}
+
+.menu_gauche_content span[class*="fa-"],  
+.menu_gauche_content i[class*="fa-"] {
+	color: var(--color-text-secondary);
+}
+
+/** Notes */
+[class*="moyenne"] {
+	color: var(--color-accent);
+	padding-left: 3px;
+	vertical-align: super;
+	font-size: 0.7em;
+}
+
+/** Puces */
+li:has(i.fa-chevron-right) {
+  list-style-type: none;
+}
+li i.fa-chevron-right {
+	color: var(--color-primary);
+	font-size: 0.8em;
+	margin-left: -1em;
+}
+
+/* surpatch pour l'index */
+#encartForum th.puce, #encartForum th.puceNonLu, 
+#encartForum i.puce, #encartForum i.puceNonLu {
+	background: none;
+	padding-left: 1px !important;
+}
+i.puce {
+	color: var(--color-border);
+}
+i.puceNonLu {
+	color: var(--color-accent);
+}
+
+/** News */
+i[class*="fa-"].pass1 {
+	color: var(--color-surface);
+}
+i[class*="fa-"].pass1::before {
+	width: 48px;
+	height: 48px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 35px;
+	background-color: var(--color-primary);
+	border-radius: var(--radius);
+  transition: background var(--transition-fast), color var(--transition-fast), filter var(--transition-fast);
+  box-shadow: var(--shadow-small);
+  margin: 0 var(--space-xs);
+	display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.newsTitle i[class*="fa-"] {
+	font-style: italic;
+}
+.awi-metadata-icons i[class*="fa-"], 
+.awi-metadata-icons span[class*="fa-"], 
+.pronostique i[class*="fa-"] {
+	color: var(--color-text-secondary);
+}
+
+/* Divers */
+.warning i[class*="fa-"], .information i[class*="fa-"] {
+	font-size: 3.5em;
+	margin-left: -0.85em;
+	padding-right: var(--space-s);
+	float: left;
+}
+.warning i[class*="fa-"] {
+	color: var(--color-accent);
+}
+.information i[class*="fa-"] {
+	color: var(--color-primary);
+}
+.warning, .information {
+	min-height: 4em;
+}
+.old-bouton i[class*="fa-"]{
+	padding-right: var(--space-s);
+	color: var(--color-surface);
+}
+
+/* Annule les styles pour les icônes dans les boutons awi-button */
+.awi-button i[class*="fa-"] {
+	font-size: inherit;
+	margin-left: 0;
+	padding-right: 0;
+	float: none;
+	color: inherit;
+}
+.prive::after {
+	content: none;
+	padding: 0;
+	margin: 0;
+}
+.fa-lock {
+	color: var(--color-accent) !important;
+}
+
+/** Les notes */
+ul[class*="notes-echelle"] i.fa-star {
+	margin: 0;
+	padding: 0;
+	font-size: 2em;
+}
+ul[class*="notes-echelle"] i.fa-solid.fa-star {
+	color: var(--color-accent);
+}
+ul[class*="notes-echelle"] i.fa-regular.fa-star {
+	color: var(--color-border);
+}
+
+/* LAN */
+.cr_galerie i, .pic_galerie i {
+	font-size: 39px;
+	color: var(--color-text-secondary);
+	vertical-align: middle;
+	margin-top: 5px;
+}
+
+#informationProno ul li::before {
+	content: none !important;
+}
+
+/* Admin */
+.ico-admin {
+	font-size: 2em;
+}
+.grillepassee i.fa-pencil {
+	--fa-rotate-angle: 180deg;
+	opacity: 0.6;
+	color: var(--color-text-secondary);
+}
+
+.social i.fa-bluesky {
+	background-color:#39a9e0;
+}
+.social i.fa-facebook-f {
+	background-color:#3b5998;
+}
+.social i.fa-threads {
+	background-color: #000000;
+}
+.social i.fa-reddit {
+	background-color:#83a6cf;
+}
+.social i.fa-envelope {
+	background-color: #414141;
+}
+.social i.fa-tumblr {
+	background-color: #283f57;
+}
+.social i.fa-pinterest {
+	background-color: #e60023;
+}
+.social i.fa-whatsapp {
+	background-color: #25D366;
+}
+.social i[class*="fa-"] {
+  width: var(--space-xl);         /* 32px */
+  height: var(--space-xl);        /* 32px */
+  text-align: center;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--space-l) * 0.7); /* ~17px */
+  color: var(--color-white);
+  border-radius: var(--radius);
+  transition: background var(--transition-fast), color var(--transition-fast), filter var(--transition-fast);
+  box-shadow: var(--shadow-small);
+  margin: 0 var(--space-xs);
+}
+html.darkmode .social i[class*="fa-"] {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 0 0 2px rgba(255,255,255,0.08);
+}

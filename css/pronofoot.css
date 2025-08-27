@@ -1,0 +1,637 @@
+/* === PRONOFOOT - STYLE FLUENT2 FUSIONNÉ ET SIMPLIFIÉ === */
+
+#pronofoot table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-small);
+  border: 1px solid var(--color-table-border);
+  margin: var(--space-m) 0;
+  transition: all var(--transition-fast);
+}
+
+#informationProno h1,
+.listeProno h1 {
+  border: none !important;
+  padding-left: var(--space-s);
+  vertical-align: middle;
+  background: none;
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+#informationProno h1:before,
+.listeProno h1:before {
+  content: none;
+  margin-right: 0;
+  position: relative;
+}
+
+#informationProno ul li:before {
+  content: "»";
+  font-size: inherit;
+  margin-right: var(--space-xs);
+  vertical-align: middle;
+  color: var(--color-primary);
+}
+
+#pronofoot table table td,
+#pronofoot table table th,
+#pronofoot table:nth-child(2) th,
+#pronofoot table:nth-child(2) td {
+  padding: 0;
+  text-align: left;
+  background: none;
+  border: none;
+}
+
+#pronofoot td.cadreNoir:nth-child(2) {
+  border-left: none;
+}
+
+/* En-tête de tableau pronofoot */
+th.pronofoot {
+  border: none;
+  border-bottom: 2px solid var(--color-table-border);
+  text-align: center;
+  color: var(--color-table-text-header);
+  background: var(--color-table-header);
+  padding: var(--space-s) var(--space-m);
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* Lignes alternées */
+#pronofoot tbody tr:nth-child(odd) {
+  background-color: var(--color-table-odd);
+}
+
+#pronofoot tbody tr:nth-child(even) {
+  background-color: var(--color-table-even);
+}
+
+#pronofoot tbody tr:hover {
+  background-color: var(--color-table-hover);
+}
+
+/* Premier du classement */
+.premier {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+.second {
+  font-weight: bold;
+  color: var(--color-text-secondary);
+}
+.troisieme {
+  font-weight: bold;
+  color: #993300;
+}
+
+/* Sous-tableaux */
+#pronofoot table table {
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+}
+
+/* Icones grille passée */
+.grillepassee .icon-edit::before {
+  color: var(--color-border);
+  transform: rotate(180deg);
+}
+
+/* Icone commentaires */
+#pronofoot .awi-postcommentsicon::before {
+  margin-right: 0;
+}
+
+/* Icônes prono (FontAwesome gère l'icône, pas de background) */
+.pronoOk,
+.pronoOld,
+.pronoKo {
+  background: none !important;
+  padding: 2px 0 2px 0;
+  line-height: 1.2;
+}
+
+/* Classement */
+.classement {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-m);
+  border: 1px solid var(--color-table-border);
+  background: var(--color-table-odd);
+}
+
+.classement .rang {
+  text-align: right;
+  width: 25px !important;
+}
+.classement .rankSame,
+.classement .rankChanged {
+  width: 30px !important;
+  padding-left: var(--space-s) !important;
+  min-width: 1.7em;
+  background: none !important;
+}
+.classement .rankSame span {
+  visibility: hidden;
+}
+.classement .rankChanged span {
+  font-size: 0.7rem;
+}
+.dateProno {
+  text-align: right !important;
+  white-space: nowrap;
+}
+.classement .point {
+  text-align: right;
+  width: 75px !important;
+  padding-right: var(--space-xs);
+}
+.classement th {
+  padding-left: var(--space-xs);
+}
+.classement th .element_title {
+  font-weight: bold;
+}
+.classement td, .classement th {
+  vertical-align: top !important;
+  padding: var(--space-s);
+  border-bottom: 1px solid var(--color-table-border);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* Alternance de couleurs pour les lignes du classement */
+.classement .forTable tr:nth-child(odd) {
+  background-color: var(--color-table-odd);
+}
+
+.classement .forTable tr:nth-child(even) {
+  background-color: var(--color-table-even);
+}
+
+/* Dernière grille */
+#lastGrille {
+  margin-left: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.classement #lastGrille .point {
+  text-align: right;
+  width: auto;
+}
+#pronofoot #lastGrille .pourcent {
+  text-align: right;
+  font-style: italic;
+  font-size: 0.7rem;
+  padding-right: var(--space-xs);
+  width: 100px;
+}
+
+/* Pronostique */
+.pronostique {
+  border-collapse: collapse;
+}
+.pronostique td, .pronostique th {
+  padding-right: 1px !important;
+  padding-left: 1px !important;
+}
+.listeProno {
+  width: 100%;
+}
+.listeProno td {
+  padding-top: var(--space-xs);
+  vertical-align: top;
+}
+.listeProno .pronostique td {
+  padding: 0 !important;
+}
+
+/* Trophées */
+.trophee {
+  float: left;
+  margin-right: var(--space-m);
+  margin-bottom: var(--space-m);
+  text-align: center;
+}
+#tableauTrophee {
+  width: 100%;
+}
+#tableauTrophee th {
+  vertical-align: middle;
+  padding-right: 1px;
+  padding-left: 1px;
+}
+#tableauTrophee th:nth-child(2) {
+  height: 20px;
+}
+
+/* Statistiques prono */
+.statProno {
+  text-align: center;
+  vertical-align: middle;
+  padding-top: var(--space-m);
+  min-width: 320px;
+  min-height: 200px;
+}
+#statistqueEquipe {
+  visibility: hidden;
+  float: left;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 99999;
+}
+
+/* Cellules valeurs */
+.cellsval {
+  width: 40px !important;
+  height: 20px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+.doublecellsval {
+  width: 80px !important;
+  height: 20px !important;
+  vertical-align: middle !important;
+}
+
+/* Saison et compétition */
+.cellSaison, .nomCompet {
+  font-weight: normal;
+  font-size: 0.7rem;
+  height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nomCompet {
+  height: 200px;
+}
+.cellSaison {
+  height: 240px;
+  font-weight: bold !important;
+}
+.encartSaison {
+  border-left: 1px solid var(--color-table-border);
+  border-right: 1px solid var(--color-table-border);
+  border-bottom: 1px solid var(--color-table-border);
+  text-align: center;
+  vertical-align: top;
+  width: 20%;
+}
+
+/* Grille passée/non passée */
+.grillenonpassee label {
+  font-weight: bold;
+}
+.grillepassee label {
+  font-weight: normal;
+  font-style: italic;
+}
+.matchnonpasse {
+  font-weight: bold;
+}
+.matchnonpasse select.resultat {
+  border: 1px dotted var(--color-error);
+}
+.matchpasse, .matchpasse input, .matchpasse select {
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Points et pourcentages */
+.cadreNoir.pourcent, .cadreNoir.bonprono {
+  border-left: 1px dotted var(--color-table-border);
+}
+.cadreNoir.bonprono,
+.cadreNoir.point {
+  border-right: none;
+}
+.bonProno {
+  color: var(--color-success);
+  font-weight: bold;
+}
+.mauvaisProno {
+  color: var(--color-error);
+  font-weight: normal;
+}
+td.disabled {
+  visibility: hidden;
+}
+.cadreNoir label {
+  font-weight: normal;
+  font-size: 0.95em;
+}
+
+/* Logo équipe */
+.logoEquipe {
+  padding-top: 4px;
+  margin: 1px !important;
+  max-height: 32px;
+  vertical-align: middle;
+}
+
+/* Statistiques */
+.statIco {
+  cursor: pointer;
+  margin: 0;
+  max-width: 17px !important;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #pronofoot table,
+  #pronofoot table table {
+    font-size: 0.95rem;
+  }
+  th.pronofoot {
+    font-size: 0.95rem;
+    padding: var(--space-xs);
+  }
+  .statProno {
+    min-width: 0;
+    min-height: 120px;
+    padding-top: var(--space-s);
+  }
+  #lastGrille {
+    width: 100%;
+  }
+  .trophee {
+    margin-right: var(--space-s);
+    margin-bottom: var(--space-s);
+  }
+}
+.fluent-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-small);
+  max-width: 350px;
+  margin-left: auto;
+  margin-bottom: var(--space-m);
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.fluent-card-header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-xs) var(--space-m);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+}
+
+.fluent-card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.fluent-card-body {
+  padding: var(--space-m);
+}
+
+.fluent-card-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-xs) 0;
+  font-weight: 600;
+}
+
+.fluent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .fluent-card.fluent-info {
+    float: right;
+    margin-left: var(--space-m);
+  }
+}
+
+form#navigation select, .classement select, form#navigation input, .classement input {
+  max-width: 23%;
+}
+
+/** Classement fluent **/
+
+/* Tableau de classement Fluent 2 */
+
+
+/* En-tête du tableau */
+.classement th.pronofoot {
+  background: var(--color-table-header);
+  color: var(--color-table-text-header);
+  font-size: 1.1rem;
+  padding: var(--space-s) var(--space-m);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: none;
+}
+
+/* Formulaires de filtrage */
+.classement .footerClassement {
+  background: var(--color-muted);
+  padding: var(--space-s);
+  border: none;
+}
+
+/* Titres des sections */
+.classement h3 {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin: var(--space-s) 0;
+  font-weight: 600;
+}
+
+/* Lignes du tableau */
+.classement .forTable tr {
+  transition: background var(--transition-fast);
+}
+
+.classement .forTable tr:hover {
+  background: var(--color-table-hover);
+}
+
+/* Cellules du tableau */
+.classement .forTable td, .classement .forTable th {
+  padding: var(--space-xs) var(--space-s);
+  border-bottom: 1px solid var(--color-table-border);
+}
+
+/* Liens dans le tableau */
+.classement .forTable a.element_title {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  font-weight: 500;
+}
+
+.classement .forTable a.element_title:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* Pourcentages et statistiques */
+.classement .pourcent {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Moyennes */
+div.moyenne {
+  padding: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Dernière grille - titre avec lien */
+.classement h3 a.element_title {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.classement h3 a.element_title:hover {
+  text-decoration: underline;
+}
+
+.classement h3 i {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* Tableau de classement Fluent 2 - Corrections */
+.classement {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-m);
+  border: 1px solid var(--color-table-border);
+  background: var(--color-surface);
+}
+
+/* Correction des bordures internes */
+.classement td.cadreNoir {
+  border: none;
+  padding: var(--space-s);
+  background: var(--color-surface);
+}
+
+/* Séparation entre les colonnes principales */
+.classement tr td.cadreNoir + td.cadreNoir {
+  border-left: 1px solid var(--color-table-border);
+}
+
+/* Titres des sections - amélioration */
+.classement h3 {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin: 0 0 var(--space-s) 0;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-table-border);
+}
+
+/* Amélioration des moyennes */
+div.moyenne {
+  padding: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-size: 0.9rem;
+  background: var(--color-muted);
+  border-top: 1px solid var(--color-table-border);
+  margin-top: var(--space-xs);
+}
+
+/* Amélioration des rangs */
+.classement .rang {
+  font-weight: bold;
+  color: var(--color-text-secondary);
+}
+
+/* Amélioration des points et pourcentages */
+.classement .point,
+.classement .nbpronos {
+  font-weight: 500;
+}
+
+/* Amélioration du titre principal */
+.classement th.pronofoot {
+  background: var(--color-table-header);
+  color: var(--color-table-text-header);
+  font-size: 1.1rem;
+  padding: var(--space-s) var(--space-m);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: none;
+  text-align: center;
+}
+
+/* Amélioration des boutons de filtrage */
+.classement input[type="submit"] {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  padding: var(--space-xs) var(--space-s);
+  border-radius: var(--radius);
+}
+
+.classement input[type="submit"]:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Amélioration des pourcentages dans la dernière grille */
+.classement .pourcent {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .classement {
+    font-size: 0.9rem;
+  }
+  
+  .classement .forTable td, 
+  .classement .forTable th {
+    padding: var(--space-xs) var(--space-xs);
+  }
+  
+  .classement td.cadreNoir {
+    padding: var(--space-xs);
+  }
+}

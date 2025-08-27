@@ -1,0 +1,286 @@
+/*************************************
+*	   ARTICLES
+*************************************/
+
+.listeArticle .boiteArticle {
+	width: 360px;
+	vertical-align: top;
+	margin-top: var(--space-s);
+}
+
+.listeArticle .boiteGauche {
+	border-right: 1px solid var(--color-border);
+	padding-right: var(--space-s);
+}
+
+.listeArticle .boiteDroite {
+	padding-left: var(--space-s);
+}
+
+.listeArticle .vignette_accueil {
+	margin-right: var(--space-s);
+}
+
+.description {
+	vertical-align: top;
+}
+
+span.article_author {
+	color: var(--color-accent);
+}
+
+/* === PAGINATION FLUENT 2 AVEC TOKENS === */
+
+/* Table contenant la pagination */
+table:has(.next_page),
+table:has(.previous_page) {
+	border-collapse: collapse;
+	border: none;
+	background: transparent;
+	width: 100%;
+}
+
+/* Ligne flex pour répartir les boutons */
+table:has(.next_page) tr,
+table:has(.previous_page) tr {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+/* Cellules */
+table:has(.next_page) td,
+table:has(.previous_page) td {
+	display: flex;
+}
+
+/* Boutons de pagination */
+table:has(.next_page) a.page_link,
+table:has(.previous_page) a.page_link {
+	display: inline-block;
+	padding: var(--space-s) var(--space-m);
+	border-radius: 9999px; /* pill */
+	font-size: 0.95rem;
+	font-weight: 500;
+	text-decoration: none;
+	background: var(--color-surface);
+	color: var(--color-text);
+	border: 1px solid var(--color-border);
+	transition: all var(--transition-medium);
+	box-shadow: var(--shadow-small);
+}
+
+/* Hover / focus */
+table:has(.next_page) a.page_link:hover,
+table:has(.previous_page) a.page_link:hover,
+table:has(.next_page) a.page_link:focus,
+table:has(.previous_page) a.page_link:focus {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+	color: #fff;
+	box-shadow: var(--shadow);
+}
+
+/* Actif */
+table:has(.next_page) a.page_link:active,
+table:has(.previous_page) a.page_link:active {
+	background: var(--color-primary-hover);
+	border-color: var(--color-primary-hover);
+	transform: translateY(1px);
+}
+
+/* Alignements */
+.previous_page {
+	justify-content: flex-start;
+}
+.next_page {
+	justify-content: flex-end;
+}
+
+/*************************************
+*	   POUR LES NEWS
+*************************************/
+
+div.news {
+	width: 100%;
+	margin-bottom: var(--space-s);
+	background-color: var(--color-surface);
+	color: var(--color-text);
+}
+
+div.news .entete img {
+	width: 45px;
+}
+
+div.news .newsTitle {
+	margin-left: 55px;
+	color: var(--color-text);
+}
+
+div.news .actualite_content {
+	text-align: justify;
+	padding: var(--space-s) var(--space-s) var(--space-s) 12px;
+	margin: var(--space-m) 0 2em 0;
+	border-width: 0px 0px 1px 2px;
+	border-style: solid solid solid solid;
+	border-color: transparent transparent var(--color-border) var(--color-primary);
+	background-color: var(--color-surface);
+	color: var(--color-text);
+	border-radius: 0 0 var(--radius) 0;
+}
+
+div.news .reactions {
+	text-align: right;
+	margin-top: var(--space-m);
+	width: 100%;
+}
+
+span.news_type {
+	font-size: 0.75rem;
+	color: var(--color-text-secondary);
+}
+
+a.news_type {
+	color: var(--color-text);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+	font-size: inherit;
+}
+
+a.news_type:hover {
+	color: var(--color-primary);
+}
+
+a.news_comment {
+	color: var(--color-accent);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+a.news_comment:hover {
+	color: var(--color-accent-hover);
+}
+
+div.news .actualite_content img {
+	padding-left: var(--space-s);
+	padding-right: var(--space-s);
+}
+
+table.type-news {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	background-color: var(--color-surface);
+}
+
+table.type-news td {
+	text-align: center;
+	width: 80px;
+	vertical-align: middle;
+	color: var(--color-text);
+}
+
+table.type-news a {
+	margin: 3px 3px 3px 3px !important;
+	width: 80px;
+	color: var(--color-text);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+table.type-news a:hover {
+	color: var(--color-primary);
+}
+
+/* Pour les listes de news */
+li h3 a {
+	font-weight: normal;
+	margin: 0px 0px 0px 0px;
+	color: var(--color-text);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+li h3 a:hover {
+	color: var(--color-primary);
+}
+
+h3.title_third a, h3.title_half a, h3.title a {
+	font-style: italic !important;
+	color: var(--color-text);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+h3.title_third a:hover, h3.title_half a:hover, h3.title a:hover {
+	color: var(--color-primary);
+}
+
+/**************************************
+ * Style restant car présents en Bdd
+ **************************************/
+td.encart_jeu_propriete, th.encart_jeu_propriete {
+	width: 120px;
+	font-weight: bold;
+	border: 0px solid var(--color-border);
+	border-bottom-width: 1px;
+	text-align: left !important;
+	margin-left: 3px;
+	vertical-align: top !important;
+	padding: var(--space-s) var(--space-s) var(--space-s) 0px !important;
+	color: var(--color-text);
+	background-color: var(--color-surface);
+}
+
+td.encart_jeu_valeur {
+	font-weight: normal;
+	border: 0px solid var(--color-border);
+	border-bottom-width: 1px;
+	vertical-align: top;
+	padding: var(--space-s) var(--space-s) var(--space-s) 0px !important;
+	color: var(--color-text);
+	background-color: var(--color-surface);
+}
+
+div.introduction_test {
+	background-color: var(--color-hover);
+	border: 1px dotted var(--color-border);
+	text-align: justify;
+	padding: var(--space-s);
+	color: var(--color-text);
+}
+
+div.content_test {
+	text-align: justify;
+	padding: var(--space-s);
+	color: var(--color-text);
+}
+
+dl.note {
+	border-collapse: collapse;
+	border: 2px solid var(--color-border);
+	margin: 0.5em;
+}
+
+dt.rank {
+	background-color: var(--color-text);
+	text-align: center !important;
+	color: var(--color-surface);
+	font-weight: bold;
+	padding: 0px;
+	min-width: auto !important;
+	width: 100%;
+	margin-top: 0;
+}
+
+dd.note {
+	background-color: var(--color-surface);
+	color: var(--color-text-secondary);
+	font-size: 30pt;
+	font-weight: bold;
+	text-align: center !important;
+	vertical-align: middle !important;
+	height: 40pt !important;
+	width: 100%;
+	margin: 0;
+}

@@ -1,0 +1,297 @@
+/* === TABLEAUX FLUENT 2 === */
+
+/* Style de base pour tous les tableaux */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: var(--space-l);
+  background-color: var(--color-surface);
+  color: var(--color-table-text);
+  max-width: var(--max-width-content);
+  font-size: 1rem;
+}
+
+/* Cellules de base */
+th, td {
+  padding: var(--space-s) var(--space-m);
+  text-align: left;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  border: none;
+}
+
+th {
+  font-weight: 600;
+  color: var(--color-table-text-header);
+}
+
+/* === TABLEAUX STYLISÉS (table-data, table-zebra, bordure, bench-resultat) === */
+table.table-data,
+table.table-zebra,
+table.bordure,
+table.bench-resultat {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-small);
+  overflow: hidden;
+  border: 1px solid var(--color-table-border);
+  max-width: var(--max-width-blocs);
+  margin: var(--space-l) auto;
+  width: 100%;
+  background: var(--color-surface);
+  color: var(--color-table-text);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* En-têtes pour tableaux stylisés */
+table.table-data th,
+table.table-zebra th,
+table.bordure th,
+table.bench-resultat th {
+  background-color: var(--color-table-header);
+  color: var(--color-table-text-header);
+  border-bottom: 1px solid var(--color-table-border);
+  font-weight: 600;
+}
+
+/* Première ligne d'en-tête : coins arrondis en haut */
+table.table-data thead tr:first-child th:first-child,
+table.table-zebra thead tr:first-child th:first-child,
+table.bordure thead tr:first-child th:first-child,
+table.bench-resultat thead tr:first-child th:first-child {
+  border-top-left-radius: var(--radius);
+}
+
+table.table-data thead tr:first-child th:last-child,
+table.table-zebra thead tr:first-child th:last-child,
+table.bordure thead tr:first-child th:last-child,
+table.bench-resultat thead tr:first-child th:last-child {
+  border-top-right-radius: var(--radius);
+}
+
+/* Alternance des lignes pour tableaux stylisés */
+table.table-data tbody tr:nth-child(odd),
+table.table-zebra tbody tr:nth-child(odd),
+table.bordure tbody tr:nth-child(odd),
+table.bench-resultat tbody tr:nth-child(odd) {
+  background-color: var(--color-table-odd);
+}
+
+table.table-data tbody tr:nth-child(even),
+table.table-zebra tbody tr:nth-child(even),
+table.bordure tbody tr:nth-child(even),
+table.bench-resultat tbody tr:nth-child(even) {
+  background-color: var(--color-table-even);
+}
+
+/* Classes manuelles odd/even pour cohérence */
+table.table-data tr.odd,
+table.table-zebra tr.odd,
+table.bordure tr.odd,
+table.bench-resultat tr.odd {
+  background-color: var(--color-table-odd) !important;
+}
+
+table.table-data tr.even,
+table.table-zebra tr.even,
+table.bordure tr.even,
+table.bench-resultat tr.even {
+  background-color: var(--color-table-even) !important;
+}
+
+/* Effet de survol pour tableaux stylisés */
+table.table-data tbody tr:hover,
+table.table-zebra tbody tr:hover,
+table.bordure tbody tr:hover,
+table.bench-resultat tbody tr:hover {
+  background-color: var(--color-table-hover) !important;
+}
+
+/* Bordures internes pour tableaux stylisés */
+table.table-data td,
+table.table-zebra td,
+table.bordure td,
+table.bench-resultat td,
+table.table-data th,
+table.table-zebra th,
+table.bordure th,
+table.bench-resultat th {
+  border: 1px solid var(--color-table-border) !important;
+  border-bottom: 1px solid var(--color-table-border) !important;
+}
+
+/* === CLASSES SPÉCIFIQUES === */
+
+/* Cellules avec valeur */
+td.valeur {
+  background-color: var(--color-info-light) !important;
+  color: var(--color-text);
+}
+
+/* Éléments */
+th.element, 
+td.element {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Catégories */
+th.categorie, 
+td.categorie {
+  background-color: var(--color-table-header) !important;
+  color: var(--color-table-text-header) !important;
+  font-weight: 600;
+}
+
+td.description {
+	border-top: inherit;
+}
+
+td.encart_jeu_valeur {
+	width: inherit;
+}
+
+.encart-lan .description {
+  min-width: 23em;
+}
+
+/* === STYLES SPÉCIFIQUES EXISTANTS === */
+
+/* Caption */
+caption {
+  caption-side: bottom;
+  font-style: italic;
+  text-align: center;
+  padding: var(--space-s);
+  color: var(--color-text-secondary);
+}
+
+/* Alignements */
+td.gauche {
+  text-align: left !important;
+  float: none;
+}
+
+td.droite {
+  text-align: right !important;
+  float: none;
+}
+
+/* Tables sans padding */
+table.nopadding td {
+  padding: 0 !important;
+}
+
+/* === STYLES SPÉCIFIQUES GALERIE ET ENCARTS === */
+.encart-lan th.encart_jeu_propriete {
+  width: 1em !important;
+  padding-left: 0.5em !important;
+}
+
+table.galerieLan {
+  margin: 0 !important;
+  border: none;
+  box-shadow: none;
+}
+
+table.galerieLan td {
+  margin: 0 !important;
+  border: none;
+}
+
+.galerieLan td.cr_galerie div, 
+.galerieLan td.pic_galerie div {
+  padding-bottom: 3px;
+  padding-top: 0px;
+}
+
+/* === DERNIÈRE LIGNE : COINS ARRONDIS EN BAS === */
+/* Pour les tableaux avec tfoot */
+table.table-data tfoot tr:last-child td:first-child,
+table.table-zebra tfoot tr:last-child td:first-child,
+table.bordure tfoot tr:last-child td:first-child,
+table.bench-resultat tfoot tr:last-child td:first-child {
+    border-bottom-left-radius: var(--radius);
+}
+
+table.table-data tfoot tr:last-child td:last-child,
+table.table-zebra tfoot tr:last-child td:last-child,
+table.bordure tfoot tr:last-child td:last-child,
+table.bench-resultat tfoot tr:last-child td:last-child {
+    border-bottom-right-radius: var(--radius);
+}
+
+/* Pour les tableaux sans tfoot */
+table.table-data:not(:has(tfoot)) tbody tr:last-child td:first-child,
+table.table-zebra:not(:has(tfoot)) tbody tr:last-child td:first-child,
+table.bordure:not(:has(tfoot)) tbody tr:last-child td:first-child,
+table.bench-resultat:not(:has(tfoot)) tbody tr:last-child td:first-child {
+    border-bottom-left-radius: var(--radius);
+}
+
+table.table-data:not(:has(tfoot)) tbody tr:last-child td:last-child,
+table.table-zebra:not(:has(tfoot)) tbody tr:last-child td:last-child,
+table.bordure:not(:has(tfoot)) tbody tr:last-child td:last-child,
+table.bench-resultat:not(:has(tfoot)) tbody tr:last-child td:last-child {
+    border-bottom-right-radius: var(--radius);
+}
+
+/* === TABLEAU FORUM : STYLE SPÉCIFIQUE, MODERNISÉ === */
+#encartForum table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--color-surface);
+  color: var(--color-table-text);
+  font-size: 1rem;
+  margin-bottom: var(--space-m);
+}
+
+#encartForum th, #encartForum td {
+  border: 1px solid var(--color-table-border);
+  padding: var(--space-xs);
+  vertical-align: middle;
+  text-align: center;
+}
+
+#encartForum th {
+	text-align: left;
+  background: var(--color-table-header);
+  color: var(--color-table-text-header);
+}
+
+#encartForum th img {
+  padding-top: 1px;
+}
+
+#encartForum tr td:nth-child(2) {
+  width: 104px;
+  background-color: var(--color-table-even);
+}
+
+#encartForum tr td:nth-child(3) {
+  width: 132px;
+}
+
+#encartForum thead {
+  display: none;
+}
+
+/* Surcharge pour les puces */
+#encartForum th.puce, #encartForum th.puceNonLu, #encartForum i.puce, #encartForum i.puceNonLu {
+  background: none;
+  padding-left: 1px !important;
+}
+#encartForum i.puce {
+  color: #bdbdbd;
+}
+#encartForum i.puceNonLu {
+  color: #fa6114;
+}
+
+thead, tbody, tfoot {
+	padding: 0;
+}
+
+.padding0 {
+	padding: 0;
+}

@@ -1,0 +1,283 @@
+/* === BOUTONS === */
+button, .button, a.button, a.awi-button, span.old-bouton > a.awi-button,
+input[type="submit"], input[type="reset"], input[type="button"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-s);
+  background-color: var(--color-primary);
+  color: white !important;
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--space-xs) var(--space-m);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  text-align: center;
+  text-decoration: none !important;
+  box-sizing: border-box;
+  vertical-align: middle;
+  height: 40px; /* Pour alignement parfait avec select */
+  line-height: 1.2;
+}
+
+button:hover, .button:hover, a.button:hover, a.awi-button:hover, span.old-bouton > a.awi-button:hover,
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+  background-color: var(--color-accent);
+  text-decoration: none !important;
+  transform: translateY(-1px);
+}
+
+button:active, .button:active, a.button:active, a.awi-button:active, span.old-bouton > a.awi-button:active,
+input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+  transform: translateY(1px);
+}
+
+button.secondary, .button.secondary, a.button.secondary, a.awi-button.secondary,
+input[type="submit"].secondary, input[type="reset"].secondary, input[type="button"].secondary {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border);
+}
+
+button.secondary:hover, .button.secondary:hover, a.button.secondary:hover, a.awi-button.secondary:hover,
+input[type="submit"].secondary:hover, input[type="reset"].secondary:hover, input[type="button"].secondary:hover {
+  background-color: var(--color-bg-muted);
+}
+
+button:disabled, .button:disabled, a.button:disabled, a.awi-button:disabled,
+input[type="submit"]:disabled, input[type="reset"]:disabled, input[type="button"]:disabled {
+  background-color: var(--color-bg-muted);
+  color: var(--color-text-muted) !important;
+  cursor: not-allowed;
+}
+
+button.small, .button.small, a.button.small, a.awi-button.small,
+input[type="submit"].small, input[type="reset"].small, input[type="button"].small {
+  font-size: 0.875rem;
+  padding: var(--space-xs) var(--space-s);
+  height: 32px;
+}
+
+button.large, .button.large, a.button.large, a.awi-button.large,
+input[type="submit"].large, input[type="reset"].large, input[type="button"].large {
+  font-size: 1.125rem;
+  padding: var(--space-m) var(--space-l);
+  height: 48px;
+}
+
+button.edition,
+button.supprimer,
+button.ajouter {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+/* Boutons avec accents */
+.btn--accent { background: var(--color-accent); }
+.btn--accent:hover { background: var(--color-accent-hover); }
+.btn--success { background: var(--color-success); color: white !important; }
+.btn--info { background: var(--color-info); color: white !important; }
+.btn--outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary) !important;
+}
+.btn--outline:hover {
+  background: var(--color-primary);
+  color: white !important;
+}
+
+/* Pour les boutons avec icône */
+button > i,
+.button > i,
+a.button > i,
+a.awi-button > i,
+span.old-bouton > i {
+  margin-right: var(--space-s);
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* Pour éviter le soulignement sur les faux boutons */
+a.awi-button,
+span.old-bouton > a.awi-button {
+  text-decoration: none !important;
+}
+
+/* === FORMULAIRES === */
+input, textarea {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  padding: var(--space-xs) var(--space-m);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 1.2;
+}
+
+select {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  padding: var(--space-xs) var(--space-m);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 1.2;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+input[type="checkbox"], input[type="radio"] {
+  margin-right: var(--space-xs);
+  height: auto;
+}
+
+input[type="checkbox"][readonly] {
+  pointer-events: none;
+}
+
+input[type="number"] {
+  text-align: right;
+  min-width: 4em;
+  height: 40px;
+}
+
+input[type="text"], textarea {
+  padding-left: 5px !important;
+}
+
+input[required]+span:after,
+select[required]+span::after,
+textarea[required]+span::after {
+  color: var(--color-error);
+  content: " *";
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+legend {
+  font-weight: 600;
+  padding: 0 var(--space-xs);
+}
+
+/* === input[type="date"] harmonisé === */
+input[type="date"], input.date {
+  width: inherit !important;
+  min-width: inherit !important;
+  padding-left: 5px !important;
+  font-size: 1rem;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+/* === PROGRESS BAR === */
+progress {
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--color-primary);
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--color-bg-subtle);
+  border-radius: var(--radius);
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--color-primary);
+  border-radius: var(--radius);
+  transition: width var(--transition-medium);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--color-primary);
+  border-radius: var(--radius);
+  transition: width var(--transition-medium);
+}
+
+progress::-ms-fill {
+  background-color: var(--color-primary);
+  border-radius: var(--radius);
+  transition: width var(--transition-medium);
+}
+
+progress:indeterminate {
+  background-image: linear-gradient(90deg, var(--color-primary) 25%, var(--color-accent) 50%, var(--color-primary) 75%);
+  background-size: 200% 100%;
+  animation: progress-indeterminate 1.5s linear infinite;
+}
+
+@keyframes progress-indeterminate {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.progress-label {
+  color: var(--color-text);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-xs);
+}
+
+/* === ALIGNEMENT VERTICAL DES ÉLÉMENTS DANS LES FORMULAIRES INLINE === */
+form > * {
+  vertical-align: middle;
+}
+
+/* Affichage vertical lisible pour input[type=checkbox] + label, même sans bloc */
+input[type="checkbox"] + label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: var(--space-xs);
+  margin-right: var(--space-xl);
+  margin-bottom: var(--space-s);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Forcer le retour à la ligne après chaque label */
+input[type="checkbox"] + label::after {
+  content: "";
+  display: block;
+}
+
+/* Optionnel : améliorer la case à cocher */
+input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin: 0;
+}
